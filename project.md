@@ -2,6 +2,13 @@
 ## 主題
 * 透過神經網路進行貓、狗圖像辨識
 
+## 需求
+1. Python3 (Tested on 3.7.3)
+2. TensorFlow
+3. NumPy
+4. tqdm
+5. Dogs vs. Cats dataset from https://www.kaggle.com/c/dogs-vs-cats
+6. Pytorch
 ## 環境安裝
 
 ## 參考文獻
