@@ -10,6 +10,9 @@
 5. Dogs vs. Cats dataset from https://www.kaggle.com/c/dogs-vs-cats
 6. Pytorch
 ## 環境安裝
+1. 安裝 python (3.7.3)：https://www.python.org/downloads/release/python-373/
+2. 安裝 Anaconda3 (3.7)：https://www.anaconda.com/distribution/
+    * 建議使用，用來管理 python emvironment
 
 ## 參考文獻
 1. [leemengtaiwan GitHub / cat-recognition-train](https://github.com/leemengtaiwan/cat-recognition-train)
