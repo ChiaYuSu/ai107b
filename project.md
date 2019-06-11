@@ -38,6 +38,38 @@
 * 所以以上總共換了 0 + 3 + 1 + 0 = 4 個硬幣
 
 ## 程式碼
+### 貪婪演算法
+```c
+#include <stdio.h>
+int money;
+int a, b, c, d;
+int a2, b2, c2, d2;
+int temp, temp2, temp3;
+int main() {
+	printf("請輸入金額：");
+	scanf("%d", &money);
+	
+	a = money / 29;
+	a2 = a * 29;
+	temp = money - a2;
+	
+	b = temp / 22;
+	b2 = b * 22;
+	temp2 = temp - b2;
+	
+	c = temp2 / 5;
+	c2 = c * 5;
+	temp3 = temp2 - c2;
+	
+	d = temp3;
+	
+	printf("29元：%d\n", a);
+	printf("22元：%d\n", b);
+	printf(" 5元：%d\n", c);
+	printf(" 1元：%d\n", d);
+	printf("總共換了 %d 的硬幣\n", a+b+c+d);
+}
+```
 
 ## 參考文獻
 1. [維基百科 / 貪婪演算法](https://zh.wikipedia.org/wiki/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95)
