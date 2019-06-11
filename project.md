@@ -42,7 +42,7 @@
 * 程式碼
 ```c
 #include <stdio.h>
-int money, currency, i, number = 0;
+int money, currency, i, j, t, number = 0;
 int coin[1000];
 int coin2[1000];
 int coin3[1000];
@@ -53,7 +53,7 @@ int main() {
 	scanf("%d", &money);
 	printf("請輸入有幾種幣值：");
 	scanf("%d", &currency);
-	printf("請輸入幣值（由大到小排列）\n");
+	printf("請輸入幣值：\n");
 	for (i = 0; i < currency; i++) {
 		printf("%d. ", i+1);
 		scanf("%d元", &coin[i]);
@@ -61,39 +61,34 @@ int main() {
 	
 	printf("--------------------------------\n");
 	
+	// bubble sort algorithm
+	for (i = 0; i < currency; i++) {
+		for (j = i+1; j < currency; j++) {
+			if (coin[i] < coin[j]) {
+				t = coin[i];
+				coin[i] = coin[j];
+				coin[j] = t;
+			}
+		}
+	}
+	
 	temp[0] = money;
 	
+	// greedy algorithm
 	for (i = 0; i < currency; i++) {
 		coin2[i] = temp[i] / coin[i];
 		coin3[i] = coin2[i] * coin[i];
 		temp[i+1] = temp[i] - coin3[i];
 	} 
 	
+	// answer
 	for (i = 0; i < currency; i++) {
 		printf("%d元：%d\n", coin[i], coin2[i]);
 		number = number + coin2[i];
 	}
 	printf("--------------------------------\n");
 	printf("一共換了 %d 個硬幣。", number);
-    return 0;
 }
-```
-* 輸出結果
-```
-請輸入金額：71
-請輸入有幾種幣值：4
-請輸入幣值（由大到小排列）
-1. 29
-2. 22
-3. 5
-4. 1
---------------------------------
-29元：2
-22元：0
-5元：2
-1元：3
---------------------------------
-一共換了 7 個硬幣。
 ```
 
 ## 參考文獻
