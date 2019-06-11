@@ -41,33 +41,40 @@
 ### 貪婪演算法
 ```c
 #include <stdio.h>
-int money;
-int a, b, c, d;
-int a2, b2, c2, d2;
-int temp, temp2, temp3;
+int money, currency, i, number = 0;
+int coin[1000];
+int coin2[1000];
+int coin3[1000];
+int temp[1000];
+
 int main() {
 	printf("請輸入金額：");
 	scanf("%d", &money);
+	printf("請輸入有幾種幣值：");
+	scanf("%d", &currency);
+	printf("請輸入幣值（由大到小排列）\n");
+	for (i = 0; i < currency; i++) {
+		printf("%d. ", i+1);
+		scanf("%d元", &coin[i]);
+	}
 	
-	a = money / 29;
-	a2 = a * 29;
-	temp = money - a2;
+	printf("--------------------------------\n");
 	
-	b = temp / 22;
-	b2 = b * 22;
-	temp2 = temp - b2;
+	temp[0] = money;
 	
-	c = temp2 / 5;
-	c2 = c * 5;
-	temp3 = temp2 - c2;
+	for (i = 0; i < currency; i++) {
+		coin2[i] = temp[i] / coin[i];
+		coin3[i] = coin2[i] * coin[i];
+		temp[i+1] = temp[i] - coin3[i];
+	} 
 	
-	d = temp3;
-	
-	printf("29元：%d\n", a);
-	printf("22元：%d\n", b);
-	printf(" 5元：%d\n", c);
-	printf(" 1元：%d\n", d);
-	printf("總共換了 %d 的硬幣\n", a+b+c+d);
+	for (i = 0; i < currency; i++) {
+		printf("%d元：%d\n", coin[i], coin2[i]);
+		number = number + coin2[i];
+	}
+	printf("--------------------------------\n");
+	printf("一共換了 %d 個硬幣。", number);
+    return 0;
 }
 ```
 
