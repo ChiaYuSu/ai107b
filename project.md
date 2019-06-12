@@ -146,6 +146,8 @@ int main() {
             }
 		} 
 		printf("--------------------------------\n");
+
+		// answer
         printf("一共換了 %d 個硬幣。", DP[coin]);
     }
     return 0;
