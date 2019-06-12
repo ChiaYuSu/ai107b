@@ -168,3 +168,7 @@ int main() {
 ## 參考文獻
 1. [維基百科 / 貪婪演算法](https://zh.wikipedia.org/wiki/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95)
 2. [維基百科 / 動態規劃](https://zh.wikipedia.org/wiki/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92)
+3. [GitHub cccbook / 書籍：專業程序員一定要會的 23 種算法](https://github.com/cccbook/algjs/wiki)
+4. [ITREAD<sup>01</sup> / 動態規劃與貪心演算法的區別](https://www.itread01.com/content/1548966248.html)
+5. [Chu-Ling Ko / Ch14 貪婪演算法](https://ko19951231.github.io/algo/Ch14%20%E8%B2%AA%E5%A9%AA%E6%BC%94%E7%AE%97%E6%B3%95.html)
+6. [Chu-Ling Ko / Ch15 動態規劃](https://hackmd.io/@qR5cY2d3Ql2AdYtLfHFxVg/ByZgGkLpW?type=view)
