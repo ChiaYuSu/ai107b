@@ -108,6 +108,60 @@ int main() {
 一共換了 7 個硬幣。
 ```
 
+### 動態規劃演算法
+* 程式碼
+```c
+#include<stdio.h>
+int main() {
+    int i, j, coin, currency;
+    int num = 1;
+    while (num--) {
+    	printf("請輸入金額：");
+    	scanf("%d", &coin);
+    	printf("請輸入有幾種幣值：");
+    	scanf("%d", &currency);
+    	printf("請輸入幣值：\n");
+    	
+        int DP[1001] = {}, money[10];
+        
+        for(i = 0; i < currency; i++) {
+        	printf("%d. ", i+1);
+			scanf("%d", &money[i]);
+		}
+		
+        for(i = 0; i <= coin; i++) { 
+            for(j = 0; j < currency; j++) { 
+                if(i + money[j] <= coin) {
+                    if(DP[i + money[j]] == 0) {
+                        if(i == 0) { 
+                            DP[i + money[j]] = 1;
+                        } else {
+                            DP[i + money[j]] = DP[i] + 1;
+                        } 
+                    } else if(DP[i + money[j]] > DP[i] + 1) { 
+                        DP[i + money[j]] = DP[i] + 1;
+                    } 
+                }
+            }
+		} 
+		printf("--------------------------------\n");
+        printf("一共換了 %d 個硬幣。", DP[coin]);
+    }
+    return 0;
+}
+```
+* 執行結果
+```
+請輸入金額：71
+請輸入有幾種幣值：4
+請輸入幣值：
+1. 29
+2. 22
+3. 5
+4. 1
+--------------------------------
+一共換了 4 個硬幣。
+```
 ## 參考文獻
 1. [維基百科 / 貪婪演算法](https://zh.wikipedia.org/wiki/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95)
 2. [維基百科 / 動態規劃](https://zh.wikipedia.org/wiki/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92)
