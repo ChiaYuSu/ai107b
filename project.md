@@ -129,6 +129,7 @@ int main() {
 			scanf("%d", &money[i]);
 		}
 		
+		// dynamic alogrithm
         for(i = 0; i <= coin; i++) { 
             for(j = 0; j < currency; j++) { 
                 if(i + money[j] <= coin) {
